@@ -1,0 +1,71 @@
+# This is a Starship config file
+# Starship is a minimal, blazing-fast, and infinitely customizable cross-shell terminal prompt for any shell! 
+# Install Starship here: https://starship.rs/guide/
+# This preset requires Nerd fonts to be intalled on your terminal: https://www.nerdfonts.com/
+# This preset requires a terminal with support for ANSI 256 colors
+
+format = """\
+[](bg:#ffffff fg:#7DF9AA)\
+$os\
+[](bg:#1C3A5E fg:#7DF9AA)\
+$time\
+[](bg:#FF87AF fg:#1C3A5E)\
+$username\
+[](bg:#3B76F0 fg:#FF87AF)\
+$directory\
+[](bg:#FCF392 fg:#3B76F0)\
+[  ](bg:#FCF392 fg:#3B76F0)\
+$git_branch\
+$git_status\
+$git_metrics\
+[](fg:#FCF392 bg:#ffffff)\
+$character\
+"""
+
+[os]
+show_always = true
+disabled = false
+format = '[ 󰀵 ](bg:#7DF9AA fg:#090c0c)'
+
+[time]
+show_always = true
+disabled = false
+time_format = "%R" # Hour:Minute Format
+format = '[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)](style)'
+
+[username]
+show_always = true
+disabled = false
+format = '[  $user ](bg:#FF87AF fg:#1C3A5E)($style)'
+
+[directory]
+show_always = true
+disabled = false
+format = '[  $path ](bg:#3B76F0 fg:#FF87AF)($style)'
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+symbol = "  "
+style = "fg:#1C3A5E bg:#FCF392"
+
+[git_status]
+format = '[$all_status]($style)'
+style = "fg:#1C3A5E bg:#FCF392"
+
+[git_metrics]
+format = "([+$added]($added_style))[]($added_style)"
+added_style = "fg:#1C3A5E bg:#FCF392"
+deleted_style = "fg:bright-red bg:235"
+disabled = false
+
+[hg_branch]
+format = "[ $symbol$branch ]($style)"
+symbol = " "
+
+[cmd_duration]
+format = "[  $duration ]($style)"
+style = "fg:bright-white bg:18"
+
+[character]
+success_symbol = '[ ➜](bold green) '
+error_symbol = '[ ✗](#E84D44) '
